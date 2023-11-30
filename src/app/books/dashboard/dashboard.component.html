@@ -1,2 +1,7 @@
 <h3>Book Collection: {{ books.length }}</h3>
-<app-book *ngFor="let b of books" [book]="b"></app-book>
+<app-book
+  *ngFor="let b of books"
+  [book]="b"
+  (rateDown)="doRateDown($event)"
+  (rateUp)="doRateUp($event)"
+></app-book>

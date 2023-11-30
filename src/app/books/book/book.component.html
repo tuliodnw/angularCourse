@@ -1,5 +1,11 @@
 <div *ngIf="book" class="container">
-  <h1>{{ book.title }}</h1>
+  <div class="box1">
+    <h1>{{ book.title }}</h1>
+    <div class="button-wrapper">
+      <button (click)="doRateDown()">-</button>
+      <button (click)="doRateUp()">+</button>
+    </div>
+  </div>
   <h4>{{ book.description }}</h4>
   <div class="box">
     <span>ISBN: {{ book.isbn }}</span>

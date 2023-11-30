@@ -13,6 +13,14 @@ import { BookComponent } from '../book/book.component';
 export class DashboardComponent {
   books: Book[] = [];
 
+  doRateUp(book: Book) {
+    console.log('Up', book);
+  }
+
+  doRateDown(book: Book) {
+    console.log('Down', book);
+  }
+
   constructor() {
     this.books = [
       {

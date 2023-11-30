@@ -1,12 +1,42 @@
 .container {
-  padding: 5px;
-  margin-top: 10px;
-  background-color: lightblue;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #ff99a0;
+
+  .box1 {
+    display: flex;
+
+    .button-wrapper {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+
+      button {
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        align-self: center;
+        margin: 0 3px;
+        width: 30px;
+        height: 30px;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #ffd6d9;
+        }
+
+        &:active {
+          background-color: #ff5c67;
+        }
+      }
+    }
+  }
 
   .box {
     display: flex;
 
     span {
+      background-color: #f3efe0;
       flex: 1;
       border: 1px solid black;
       padding: 3px;
