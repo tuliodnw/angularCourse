@@ -12,8 +12,4 @@ import { RatingComponent } from '../rating/rating.component';
 })
 export class BookComponent {
   @Input() book?: Book;
-
-  getStars(): string {
-    return this.book && this.book.rating ? '⭐'.repeat(this.book.rating) : '';
-  }
 }

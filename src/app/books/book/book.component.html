@@ -1,9 +1,9 @@
 <div *ngIf="book" class="container">
-  <h1 id="title">{{ book.title }}</h1>
-  <h4 id="description">{{ book.description }}</h4>
+  <h1>{{ book.title }}</h1>
+  <h4>{{ book.description }}</h4>
   <div class="box">
-    <span id="isbn">ISBN: {{ book.isbn }}</span>
-    <span id="price">Price: {{ book.price }}</span>
-    <span id="rating">Rating: {{ getStars() }}</span>
+    <span>ISBN: {{ book.isbn }}</span>
+    <span>Price: {{ book.price }}</span>
+    <span> <app-rating [value]="book.rating"></app-rating> </span>
   </div>
 </div>
