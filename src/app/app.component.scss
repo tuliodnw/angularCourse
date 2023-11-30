@@ -1,6 +1,8 @@
 @import "../colors";
 
-.container {
+.container-angular {
+  margin: auto;
   background-color: $background-angular;
   padding: 30px;
+  max-width: 1200px;
 }

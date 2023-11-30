@@ -1,6 +1,6 @@
 @import "../../../colors";
 
-.container {
+.container-book {
   padding: 15px;
   margin: 10px 0;
   background-color: $background-book;
@@ -23,6 +23,16 @@
         height: 30px;
         font-weight: bold;
 
+        &:disabled {
+          background-color: $disabled;
+          cursor: default;
+
+          &:active,
+          &:hover {
+            background-color: $disabled;
+          }
+        }
+
         &:hover {
           background-color: $background-angular;
         }
@@ -36,13 +46,35 @@
 
   .infobox {
     display: flex;
+    align-self: center;
 
     span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: $background;
       flex: 1;
       border: 1px solid black;
       padding: 3px;
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container-book {
+    .headbox {
+      flex-direction: column;
+      margin-bottom: 10px;
+
+      .button-wrapper {
+        justify-content: flex-start;
+      }
+    }
+
+    .infobox {
+      flex-direction: column;
+      gap: 2px 0;
     }
   }
 }

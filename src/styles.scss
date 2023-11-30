@@ -3,6 +3,8 @@
 @import "@angular-schule/workshop-styles/index";
 @import "colors";
 body {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   background-color: $background;
 }

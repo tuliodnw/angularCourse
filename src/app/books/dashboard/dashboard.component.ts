@@ -26,7 +26,7 @@ export class DashboardComponent {
         rating: 5,
       },
       {
-        isbn: '123456789',
+        isbn: '1234567849',
         title: 'Love Story',
         description: 'Love=Love',
         price: 25,

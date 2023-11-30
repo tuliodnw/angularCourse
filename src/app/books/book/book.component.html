@@ -1,9 +1,9 @@
-<div *ngIf="book" class="container">
+<div *ngIf="book" class="container-book">
   <div class="headbox">
     <h1>{{ book.title }}</h1>
     <div class="button-wrapper">
-      <button (click)="doRateDown()">-</button>
-      <button (click)="doRateUp()">+</button>
+      <button (click)="doRateDown()" [disabled]="book.rating <= 1">-</button>
+      <button (click)="doRateUp()" [disabled]="book.rating >= 5">+</button>
     </div>
   </div>
   <h4>{{ book.description }}</h4>
