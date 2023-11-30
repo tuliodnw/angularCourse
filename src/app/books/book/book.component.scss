@@ -1,7 +1,9 @@
+@import "../../../variables";
+
 .container {
   padding: 15px;
   margin: 10px 0;
-  background-color: #ff99a0;
+  background-color: $background-book;
 
   .box1 {
     display: flex;
@@ -22,11 +24,11 @@
         font-weight: bold;
 
         &:hover {
-          background-color: #ffd6d9;
+          background-color: $background-angular;
         }
 
         &:active {
-          background-color: #ff5c67;
+          background-color: $button-active;
         }
       }
     }
@@ -36,7 +38,7 @@
     display: flex;
 
     span {
-      background-color: #f3efe0;
+      background-color: $background;
       flex: 1;
       border: 1px solid black;
       padding: 3px;
