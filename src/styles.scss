@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "@angular-schule/workshop-styles/index";
-@import "_variables";
+@import "colors";
 body {
   padding: 30px;
   background-color: $background;

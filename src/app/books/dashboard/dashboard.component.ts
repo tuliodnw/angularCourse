@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Book } from '../shared/book';
 import { BookComponent } from '../book/book.component';
+import { BookRatingService } from '../shared/book-rating.service';
+import { findIndex } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,15 +15,8 @@ import { BookComponent } from '../book/book.component';
 export class DashboardComponent {
   books: Book[] = [];
 
-  doRateUp(book: Book) {
-    console.log('Up', book);
-  }
-
-  doRateDown(book: Book) {
-    console.log('Down', book);
-  }
-
-  constructor() {
+  constructor(private rs: BookRatingService) {
+    // why is this needed
     this.books = [
       {
         isbn: '0747549559',
@@ -38,5 +33,25 @@ export class DashboardComponent {
         rating: 2,
       },
     ];
+  }
+
+  doRateUp(book: Book) {
+    const ratedBook = this.rs.rateUp(book);
+    this.updateBooks(ratedBook);
+  }
+
+  doRateDown(book: Book) {
+    const ratedBook = this.rs.rateDown(book);
+    this.updateBooks(ratedBook);
+  }
+
+  private updateBooks(ratedBook: Book) {
+    this.books = [...this.books].map((b) => {
+      if (ratedBook.isbn === b.isbn) {
+        return ratedBook;
+      } else {
+        return b;
+      }
+    });
   }
 }

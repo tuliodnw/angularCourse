@@ -1,5 +1,5 @@
 <div *ngIf="book" class="container">
-  <div class="box1">
+  <div class="headbox">
     <h1>{{ book.title }}</h1>
     <div class="button-wrapper">
       <button (click)="doRateDown()">-</button>
@@ -7,9 +7,9 @@
     </div>
   </div>
   <h4>{{ book.description }}</h4>
-  <div class="box">
+  <div class="infobox">
     <span>ISBN: {{ book.isbn }}</span>
-    <span>Price: {{ book.price }}</span>
-    <span> <app-rating [value]="book.rating"></app-rating> </span>
+    <span>Price: {{ book.price | currency: "EUR" }}</span>
+    <span><app-rating [value]="book.rating"></app-rating></span>
   </div>
 </div>

@@ -1,11 +1,11 @@
-@import "../../../variables";
+@import "../../../colors";
 
 .container {
   padding: 15px;
   margin: 10px 0;
   background-color: $background-book;
 
-  .box1 {
+  .headbox {
     display: flex;
 
     .button-wrapper {
@@ -14,7 +14,7 @@
       justify-content: flex-end;
 
       button {
-        background-color: white;
+        background-color: $background;
         border: none;
         border-radius: 10px;
         align-self: center;
@@ -34,7 +34,7 @@
     }
   }
 
-  .box {
+  .infobox {
     display: flex;
 
     span {
