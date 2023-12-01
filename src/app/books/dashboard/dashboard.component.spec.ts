@@ -10,6 +10,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     const ratingMock = {
+      //TODO check where to use
       rateUp: (b: Book) => b,
       rateDown: (b: Book) => b,
     };
@@ -31,5 +32,15 @@ describe('DashboardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call service.rateUp() for component rateUp().', () => {
+    const rs = TestBed.inject(BookRatingService);
+    const testBook = { isbn: '3213sdf5351' } as Book;
+    spyOn(rs, 'rateUp').and.callThrough();
+
+    component.doRateUp(testBook);
+
+    expect(rs.rateUp).toHaveBeenCalledOnceWith(testBook);
   });
 });

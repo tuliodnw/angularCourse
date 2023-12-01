@@ -4,6 +4,7 @@ import { Book } from '../shared/book';
 import { BookComponent } from '../book/book.component';
 import { BookRatingService } from '../shared/book-rating.service';
 import { findIndex } from 'rxjs';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,24 +16,13 @@ import { findIndex } from 'rxjs';
 export class DashboardComponent {
   books: Book[] = [];
 
-  constructor(private rs: BookRatingService) {
-    // why is this needed
-    this.books = [
-      {
-        isbn: '0747549559',
-        title: "Harry Potter and the Philosopher's Stone",
-        description: 'Orphan gets to play with Magic',
-        price: 20,
-        rating: 5,
-      },
-      {
-        isbn: '1234567849',
-        title: 'Love Story',
-        description: 'Love=Love',
-        price: 25,
-        rating: 2,
-      },
-    ];
+  constructor(
+    private rs: BookRatingService,
+    private bs: BookStoreService,
+  ) {
+    this.bs.getAll().subscribe((books) => {
+      this.books = books;
+    });
   }
 
   doRateUp(book: Book) {

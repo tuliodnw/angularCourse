@@ -1,28 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { DashboardComponent } from './books/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, DashboardComponent],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Book Rating';
 }
-/*
-
-class BookC{
-  rating = 5;
-
-  constructor(public isbn: string, public title: string){}
-
-  rateUp{
-  this.rating++;
-}
-}
-
-*/
