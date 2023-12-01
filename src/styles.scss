@@ -8,3 +8,9 @@ body {
   padding: 30px;
   background-color: $background;
 }
+
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+  }
+}

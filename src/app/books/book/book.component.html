@@ -6,10 +6,11 @@
       <button (click)="doRateUp()" [disabled]="book.rating >= 5">+</button>
     </div>
   </div>
-  <h4>{{ book.description }}</h4>
+  <h6>{{ book.description }}</h6>
   <div class="infobox">
     <span>ISBN: {{ book.isbn }}</span>
     <span>Price: {{ book.price | currency: "EUR" }}</span>
     <span><app-rating [value]="book.rating"></app-rating></span>
   </div>
+  <a [routerLink]="['/books', book.isbn]">Details</a>
 </div>
