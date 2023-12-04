@@ -13,7 +13,7 @@ export class BookStoreService {
   getAll(): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl + '/books');
   }
-  finByISBN(isbn: string): Observable<Book> {
+  findByISBN(isbn: string): Observable<Book> {
     return this.http.get<Book>(this.apiUrl + '/books/' + isbn);
   }
 
