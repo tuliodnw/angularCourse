@@ -1,7 +1,6 @@
-<ng-container *ngIf="book">
-  <h2>{{ book.title }}</h2>
-  <span>{{ book.description }}</span>
-</ng-container>
-
-<div><a routerLink="/books">Home</a></div>
-<div><a routerLink="/books/9783864907845">GraphQL</a></div>
+<nav>
+  <ng-container *ngIf="book">
+    <h2>{{ book.title }}</h2>
+    <span>{{ book.description }}</span>
+  </ng-container>
+</nav>

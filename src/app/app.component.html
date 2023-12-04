@@ -1,14 +1,9 @@
 <div class="container-angular">
-  <h1>{{ title }}</h1>
+  <h1 routerLink="/books/">{{ title }}</h1>
   <nav>
-    <div><a routerLink="/books/">dashboard</a></div>
-    <div><a routerLink="/books/create">create</a></div>
-    <div><a routerLink="/books/search">search</a></div>
+    <button routerLink="/books/">Dashboard</button>
+    <button routerLink="/books/create">Create</button>
+    <button routerLink="/books/search">Search</button>
   </nav>
   <router-outlet></router-outlet>
-  <!-- <app-create></app-create>
-  <app-search></app-search>-->
 </div>
-<!--
-<><>
--->

@@ -6,3 +6,20 @@
   padding: 30px;
   max-width: 1200px;
 }
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  gap: 10px;
+  button {
+    width: 100%;
+    background-color: $background-book;
+    text-align: center;
+    border: none;
+
+    a {
+      all: unset;
+    }
+  }
+}

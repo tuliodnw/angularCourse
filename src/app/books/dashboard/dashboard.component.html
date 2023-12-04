@@ -1,4 +1,7 @@
-<h3>Book Collection: {{ books.length }}</h3>
+<h3>
+  Book Collection: {{ books.length }}, Last Updated:
+  {{ date | date: "medium" }}
+</h3>
 <app-book
   *ngFor="let b of books"
   [book]="b"

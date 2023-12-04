@@ -25,9 +25,9 @@ export class BookDetaillsComponent {
     // PUSH
     this.route.paramMap.subscribe((params) => {
       const isbn = params.get('isbn')!;
-      // this.bs.findByISBN(isbn).subscribe((book) => {
-      //  this.book = book;
-      //  });
+      this.bs.findByISBN(isbn).subscribe((book) => {
+        this.book = book;
+      });
     });
   }
 }

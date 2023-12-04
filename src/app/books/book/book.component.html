@@ -12,5 +12,8 @@
     <span>Price: {{ book.price | currency: "EUR" }}</span>
     <span><app-rating [value]="book.rating"></app-rating></span>
   </div>
-  <a [routerLink]="['/books', book.isbn]">Details</a>
+  <div class="actionbox">
+    <button [routerLink]="['/books', book.isbn]">Details</button>
+    <button>Delete</button>
+  </div>
 </div>

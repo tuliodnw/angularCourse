@@ -47,6 +47,7 @@
   .infobox {
     display: flex;
     align-self: center;
+    gap: 10px;
 
     span {
       display: flex;
@@ -54,9 +55,27 @@
       justify-content: center;
       background-color: $background;
       flex: 1;
-      border: 1px solid black;
       padding: 3px;
       text-align: center;
+    }
+  }
+
+  .actionbox {
+    margin: 10px 0;
+    display: flex;
+    gap: 5px;
+
+    button {
+      background-color: $background;
+      border: none;
+
+      &:hover {
+        background-color: $background-angular;
+      }
+
+      &:active {
+        background-color: $button-active;
+      }
     }
   }
 }
