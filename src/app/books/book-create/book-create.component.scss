@@ -1,4 +1,30 @@
+@import "../../../colors";
+
 form {
   margin: auto;
   max-width: 700px;
+}
+button {
+  background-color: $background;
+  border: none;
+  align-self: center;
+  margin: 0 3px;
+
+  &:disabled {
+    background-color: $disabled;
+    cursor: default;
+
+    &:active,
+    &:hover {
+      background-color: $disabled;
+    }
+  }
+
+  &:hover {
+    background-color: $background-angular;
+  }
+
+  &:active {
+    background-color: $button-active;
+  }
 }
