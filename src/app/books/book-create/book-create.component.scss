@@ -1,14 +1,25 @@
 @import "../../../colors";
 
+div {
+  background-color: $background-book;
+}
 form {
   margin: auto;
   max-width: 700px;
+  padding: 20px;
+
+  label {
+    font-weight: normal;
+  }
+}
+.form-control,
+.form-control-lg {
+  border-radius: 0;
 }
 button {
   background-color: $background;
   border: none;
   align-self: center;
-  margin: 0 3px;
 
   &:disabled {
     background-color: $disabled;
