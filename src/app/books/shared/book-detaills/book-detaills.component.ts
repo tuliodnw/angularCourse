@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BookStoreService } from '../book-store.service';
 import { Book } from '../book';
+import { map, Observable, subscribeOn, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-book-detaills',
@@ -12,7 +13,7 @@ import { Book } from '../book';
   styleUrl: './book-detaills.component.scss',
 })
 export class BookDetaillsComponent {
-  book?: Book;
+  book$: Observable<Book>;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,11 +24,16 @@ export class BookDetaillsComponent {
     // console.log(isbn);
 
     // PUSH
-    this.route.paramMap.subscribe((params) => {
+    /*  this.route.paramMap.subscribe((params) => {
       const isbn = params.get('isbn')!;
       this.bs.findByISBN(isbn).subscribe((book) => {
         this.book = book;
       });
-    });
+    });*/
+
+    this.book$ = this.route.paramMap.pipe(
+      map((params) => params.get('isbn')!),
+      switchMap((isbn) => this.bs.findByISBN(isbn)),
+    );
   }
 }

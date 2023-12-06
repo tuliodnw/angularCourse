@@ -1,5 +1,5 @@
 <nav>
-  <ng-container *ngIf="book">
+  <ng-container *ngIf="book$ | async as book">
     <h2>{{ book.title }}</h2>
     <span>{{ book.description }}</span>
   </ng-container>
