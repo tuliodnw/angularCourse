@@ -14,16 +14,30 @@ h1 {
 nav {
   display: flex;
   justify-content: space-evenly;
-  padding: 20px 0;
+  padding: 10px 15px;
   gap: 10px;
+  background-color: $background-book;
+  margin: 10px 0;
+
   button {
     width: 100%;
-    background-color: $background-book;
+    background-color: $background;
     text-align: center;
     border: none;
 
-    a {
-      all: unset;
+    &:hover {
+      background-color: $background-angular;
     }
+
+    &:active {
+      background-color: $button-active;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    gap: 2px;
   }
 }
