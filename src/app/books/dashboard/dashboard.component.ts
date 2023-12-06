@@ -15,9 +15,8 @@ import { Subscription } from 'rxjs';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   books: Book[] = [];
-  date = new Date();
-  timer: any;
-  sub: Subscription | undefined;
+  date: Date = new Date();
+  timer: number = 0;
 
   constructor(
     private rs: BookRatingService,
@@ -31,7 +30,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.timer = setInterval(() => {
       this.date = new Date();
-      console.log(this.date);
     }, 1000);
   }
 

@@ -63,7 +63,7 @@
     />
   </div>
 
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="bookForm.invalid">Submit</button>
 </form>
 
 <pre>{{ bookForm.value | json }}</pre>

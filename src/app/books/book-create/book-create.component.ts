@@ -6,6 +6,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-create',
@@ -39,7 +42,12 @@ export class BookCreateComponent {
     }),
   });
 
-  isError(controlName: string): boolean {
+  constructor(
+    private bs: BookStoreService,
+    private router: Router,
+  ) {}
+
+  isInvalid(controlName: string): boolean {
     const control = this.bookForm.get(controlName);
 
     if (!control) {
@@ -49,15 +57,29 @@ export class BookCreateComponent {
     return control.touched && control.invalid;
   }
 
-  hasError(controlName: string, error: string): boolean {
+  hasError(controlName: string, errorCode: string): boolean {
+    // "Besitzt das Control Y den Fehler X?"
     const control = this.bookForm.get(controlName);
 
-    if (!control || !error) {
+    if (!control) {
       return false;
     }
 
-    return control.hasError(error) && control.touched;
+    return control.hasError(errorCode) && control.touched;
+    // return !!control.errors?.['minlength'] && control.touched;
+    // return !!control.getError(errorCode)
+    // return this.bookForm.hasError(errorCode, controlName);
   }
 
-  submitForm() {}
+  submitForm() {
+    if (this.bookForm.invalid) {
+      return;
+    }
+
+    const newBook: Book = this.bookForm.getRawValue();
+
+    this.bs.createBook(newBook).subscribe((receivedBook) => {
+      this.router.navigate(['/books', receivedBook.isbn]);
+    });
+  }
 }
